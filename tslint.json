@@ -13,7 +13,8 @@
     "space-in-parens": [false, "never"],
     "object-curly-spacing": [false, "never"],
     "array-bracket-spacing": [false, "never"],
-    "jsx-no-lambda": [false]
+    "jsx-no-lambda": [false],
+    "max-classes-per-file": [false, 1]
   },
   "rulesDirectory": []
 }
