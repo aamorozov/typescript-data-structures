@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 class BinaryNode {
   constructor(
     public data: BinaryNode | null | undefined,
@@ -72,7 +74,7 @@ export default class BinarySearchTree {
     let current = this.root;
     if (current) {
       while (current && current.data !== data) {
-        if (current && data && current.data && data < current.data) {
+        if (current.data && data < current.data) {
           current = current.left;
         } else {
           current = current.right;
@@ -105,7 +107,7 @@ export default class BinarySearchTree {
       if (node == null) {
         return null;
       }
-      if (data == node.data) {
+      if (data === node.data) {
         // node has no children
         if (node.left == null && node.right == null) {
           return null;
