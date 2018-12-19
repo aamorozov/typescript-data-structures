@@ -14,7 +14,8 @@
     "object-curly-spacing": [false, "never"],
     "array-bracket-spacing": [false, "never"],
     "jsx-no-lambda": [false],
-    "max-classes-per-file": [false, 1]
+    "max-classes-per-file": [false, 1],
+    "prefer-for-of": false
   },
   "rulesDirectory": []
 }
