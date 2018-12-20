@@ -1,11 +1,16 @@
-const Node = function(element) {
-  this.element = element;
-  this.next = null;
-};
+class BinaryNode {
+  constructor(
+    public element: BinaryNode | null,
+    public next: BinaryNode | null
+  ) {
+    this.element = element;
+    this.next = null;
+  }
+}
 
 export default class LinkedList {
   length = 0;
-  head = null;
+  head: BinaryNode | null = null;
 
   getSize() {
     return this.length;
@@ -15,8 +20,8 @@ export default class LinkedList {
     return this.head;
   }
 
-  add(element) {
-    const node = new Node(element);
+  add(element: any): void {
+    const node = new BinaryNode(element, null);
     if (this.head === null) {
       this.head = node;
     } else {
@@ -32,28 +37,29 @@ export default class LinkedList {
     this.length++;
   }
 
-  remove(element) {
+  remove(element: any): void {
     let currentNode = this.head;
     let previousNode;
-    if (currentNode.element === element) {
+    if (currentNode && currentNode.element === element) {
       this.head = currentNode.next;
     } else {
-      while (currentNode.element !== element) {
+      while (currentNode && currentNode.element !== element) {
         previousNode = currentNode;
         currentNode = currentNode.next;
       }
-
-      previousNode.next = currentNode.next;
+      if (previousNode && currentNode) {
+        previousNode.next = currentNode.next;
+      }
     }
 
     this.length--;
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.length === 0;
   }
 
-  indexOf(element) {
+  indexOf(element: any): number {
     let currentNode = this.head;
     let index = -1;
 
@@ -68,18 +74,22 @@ export default class LinkedList {
     return -1;
   }
 
-  elementAt(index) {
+  elementAt(index: number): BinaryNode | null | void {
     let currentNode = this.head;
     let count = 0;
     while (count < index) {
       count++;
-      currentNode = currentNode.next;
+      if (currentNode) {
+        currentNode = currentNode.next;
+      }
     }
-    return currentNode.element;
+    if (currentNode) {
+      return currentNode.element;
+    }
   }
 
-  addAt(index, element) {
-    const node = new Node(element);
+  addAt(index: number, element: BinaryNode): boolean | void {
+    const node = new BinaryNode(element, null);
 
     let currentNode = this.head;
     let previousNode;
@@ -96,32 +106,42 @@ export default class LinkedList {
       while (currentIndex < index) {
         currentIndex++;
         previousNode = currentNode;
-        currentNode = currentNode.next;
+        if (currentNode) {
+          currentNode = currentNode.next;
+        }
       }
       node.next = currentNode;
-      previousNode.next = node;
+      if (previousNode) {
+        previousNode.next = node;
+      }
     }
     this.length++;
   }
 
-  removeAt(index) {
+  removeAt(index: number): BinaryNode | null | void {
     let currentNode = this.head;
     let previousNode;
     let currentIndex = 0;
     if (index < 0 || index >= this.length) {
       return null;
     }
-    if (index === 0) {
+    if (index === 0 && currentNode) {
       this.head = currentNode.next;
     } else {
       while (currentIndex < index) {
         currentIndex++;
         previousNode = currentNode;
-        currentNode = currentNode.next;
+        if (currentNode) {
+          currentNode = currentNode.next;
+        }
       }
-      previousNode.next = currentNode.next;
+      if (previousNode && currentNode) {
+        previousNode.next = currentNode.next;
+      }
     }
     this.length--;
-    return currentNode.element;
+    if (currentNode) {
+      return currentNode.element;
+    }
   }
 }
