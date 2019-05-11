@@ -1,7 +1,7 @@
 class BinaryNode {
   constructor(
     public element: BinaryNode | null,
-    public next: BinaryNode | null
+    public next: BinaryNode | null,
   ) {
     this.element = element;
     this.next = null;

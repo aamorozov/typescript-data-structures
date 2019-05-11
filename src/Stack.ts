@@ -1,6 +1,6 @@
 export default class Stack {
   count: number = 0;
-  storage: { [key: number]: number | string } = {};
+  storage: {[key: number]: number | string} = {};
   // Adds a value onto the end of the stack
   push(value: number | string): void {
     this.storage[this.count] = value;

@@ -60,7 +60,7 @@ export default class Trie {
         return str.length > 0 && words.push(str);
       }
     };
-    search(this.root, "");
+    search(this.root, '');
     return words.length > 0 ? words : null;
   }
 }

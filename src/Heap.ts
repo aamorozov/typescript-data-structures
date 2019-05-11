@@ -9,7 +9,7 @@ export class MinHeap {
         if (idx >= 1) {
           [this.heap[Math.floor(idx / 2)], this.heap[idx]] = [
             this.heap[idx],
-            this.heap[Math.floor(idx / 2)]
+            this.heap[Math.floor(idx / 2)],
           ];
           if (Math.floor(idx / 2) > 1) {
             idx = Math.floor(idx / 2);
@@ -82,7 +82,7 @@ export class MaxHeap {
         if (idx >= 1) {
           [this.heap[Math.floor(idx / 2)], this.heap[idx]] = [
             this.heap[idx],
-            this.heap[Math.floor(idx / 2)]
+            this.heap[Math.floor(idx / 2)],
           ];
           if (Math.floor(idx / 2) > 1) {
             idx = Math.floor(idx / 2);

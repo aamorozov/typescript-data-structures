@@ -1,10 +1,8 @@
-/* tslint:disable */
-
 class BinaryNode {
   constructor(
     public data: BinaryNode | null | undefined,
     public left: BinaryNode | null | undefined,
-    public right: BinaryNode | null | undefined
+    public right: BinaryNode | null | undefined,
   ) {
     this.data = data;
     this.left = left;
