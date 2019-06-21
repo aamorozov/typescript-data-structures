@@ -5,27 +5,27 @@
   "author": "Andrey Morozov <aandreymorozov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "typescript": "3.4.5"
+    "typescript": "3.5.2"
   },
   "scripts": {
     "compile": "tsc ./src --target es6"
   },
   "devDependencies": {
-    "@babel/core": "7.4.4",
-    "@babel/plugin-transform-typescript": "7.4.4",
+    "@babel/core": "7.4.5",
+    "@babel/plugin-transform-typescript": "7.4.5",
     "@babel/preset-typescript": "7.3.3",
-    "@types/node": "12.0.0",
-    "@typescript-eslint/eslint-plugin": "1.8.0",
-    "@typescript-eslint/parser": "1.8.0",
+    "@types/node": "12.0.8",
+    "@typescript-eslint/eslint-plugin": "1.10.2",
+    "@typescript-eslint/parser": "1.10.2",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "eslint": "5.16.0",
-    "eslint-config-prettier": "4.2.0",
+    "eslint-config-prettier": "5.0.0",
     "eslint-import-resolver-babel-module": "5.1.0",
     "eslint-loader": "2.1.2",
     "eslint-plugin-comments": "1.0.0",
-    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-import": "2.17.3",
     "eslint-plugin-prettier": "3.1.0",
-    "prettier": "1.17.0"
+    "prettier": "1.18.2"
   },
   "keywords": [
     "data strucures",
